@@ -1,0 +1,26 @@
+// Init_cnt
+push 7
+ldc
+// Init_stack
+push 5
+push 255
+push 30
+push 67
+push 128
+push 1
+push 120
+// Max
+cmp
+push 21 
+jnc
+swap
+drop
+push 11
+djnz
+push 25
+jmp 
+// New max
+drop
+push 11
+djnz
+end

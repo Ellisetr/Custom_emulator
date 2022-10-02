@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.3">
+  <object class="tk.Toplevel" id="toplevel1">
+    <property name="height">600</property>
+    <property name="width">800</property>
+    <child>
+      <object class="ttk.Frame" id="frame3">
+        <property name="height">600</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">1</property>
+          <property name="row">0</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="codeTxt" named="True">
+            <property name="height">28</property>
+            <property name="width">50</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">3</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="cmpBtn" named="True">
+            <property name="text" translatable="yes">Compile</property>
+            <bind sequence="&lt;ButtonPress&gt;" handler="compile" add="" />
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="runBtn" named="True">
+            <property name="text" translatable="yes">Run all</property>
+            <bind sequence="&lt;ButtonPress&gt;" handler="full_run" add="" />
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="stepBtn" named="True">
+            <property name="text" translatable="yes">Run one step</property>
+            <bind sequence="&lt;ButtonPress&gt;" handler="one_tick" add="" />
+            <layout manager="grid">
+              <property name="column">2</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame5">
+        <property name="height">600</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">0</property>
+        </layout>
+        <containerlayout manager="grid">
+          <property name="anchor">center</property>
+        </containerlayout>
+        <child>
+          <object class="ttk.Frame" id="frame7">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="ttk.Labelframe" id="COM_MEM_frame" named="True">
+                <property name="height">200</property>
+                <property name="text" translatable="yes">COM MEM</property>
+                <property name="width">400</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+                <child>
+                  <object class="ttk.Treeview" id="COM_MEM" named="True">
+                    <property name="selectmode">extended</property>
+                    <layout manager="pack" />
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Labelframe" id="DATA_MEM_frame" named="True">
+                <property name="height">200</property>
+                <property name="text" translatable="yes">DATA MEM</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+                <child>
+                  <object class="ttk.Treeview" id="DATA_MEM" named="True">
+                    <property name="selectmode">extended</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="columnspan">1</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Labelframe" id="stack_frame" named="True">
+            <property name="height">200</property>
+            <property name="text" translatable="yes">STACK MEM</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">1</property>
+              <property name="sticky">e</property>
+            </layout>
+            <child>
+              <object class="ttk.Treeview" id="STACK_MEM" named="True">
+                <property name="selectmode">extended</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="frame1">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">1</property>
+            </layout>
+            <child>
+              <object class="ttk.Labelframe" id="PC_frame" named="True">
+                <property name="height">200</property>
+                <property name="text" translatable="yes">PC</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+                <child>
+                  <object class="tk.Text" id="PC_data" named="True">
+                    <property name="height">1</property>
+                    <property name="width">2</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Labelframe" id="REGC_frame" named="True">
+                <property name="height">200</property>
+                <property name="text" translatable="yes">REGC</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+                <child>
+                  <object class="tk.Text" id="REGC" named="True">
+                    <property name="height">1</property>
+                    <property name="width">16</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Labelframe" id="DECC_frame" named="True">
+                <property name="height">200</property>
+                <property name="text" translatable="yes">DECC</property>
+                <property name="width">16</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
+                <child>
+                  <object class="tk.Text" id="text12">
+                    <property name="height">1</property>
+                    <property name="width">16</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Labelframe" id="SP_frame" named="True">
+                <property name="height">1</property>
+                <property name="text" translatable="yes">SP
+</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
+                <child>
+                  <object class="tk.Text" id="SP_data" named="True">
+                    <property name="height">1</property>
+                    <property name="state">normal</property>
+                    <property name="width">2</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Labelframe" id="Flag_frame" named="True">
+                <property name="height">200</property>
+                <property name="text" translatable="yes">Flags</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="columnspan">1</property>
+                  <property name="row">3</property>
+                </layout>
+                <child>
+                  <object class="ttk.Label" id="C_label" named="True">
+                    <property name="padding">5</property>
+                    <property name="text" translatable="yes">C</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="ZF_label" named="True">
+                    <property name="text" translatable="yes">ZF</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="tk.Text" id="C" named="True">
+                    <property name="height">1</property>
+                    <property name="width">1</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="tk.Text" id="ZF" named="True">
+                    <property name="height">1</property>
+                    <property name="width">1</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="ipadx">0</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Labelframe" id="CNT_frame" named="True">
+                <property name="height">200</property>
+                <property name="text" translatable="yes">CNT</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">3</property>
+                  <property name="rowspan">1</property>
+                </layout>
+                <child>
+                  <object class="tk.Text" id="CNT" named="True">
+                    <property name="height">1</property>
+                    <property name="width">2</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

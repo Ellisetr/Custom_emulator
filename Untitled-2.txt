@@ -1,0 +1,61 @@
+// Init_array_1
+push 34
+push 0
+write
+push 67
+push 1
+write
+push 10
+push 2
+write
+push 6
+push 3
+write
+push 7
+push 4
+write
+push 25
+push 5
+write
+// Init_array_2
+push 3
+push 8
+write
+push 6
+push 9
+write
+push 45
+push 10
+write
+push 90
+push 11
+write
+push 7
+push 12
+write
+push 69
+push 13
+write
+// Load_cnt
+push 0
+push 0
+push 5
+ldc
+// Load_number_arr1
+push 0
+stc
+dup
+ldc
+add
+read
+// Load_number_arr2
+push 8
+stc
+dup
+ldc
+add
+read
+// Svertka start
+mul
+ror
+end
